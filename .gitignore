@@ -1,0 +1,22 @@
+# Gowin IDE generated outputs
+impl/
+*.user
+
+# Bitstream and implementation artifacts
+*.fs
+*.binx
+
+# Simulation/build artifacts
+*.vvp
+*.vcd
+*.wdb
+*.log
+
+# Python cache (if helper scripts are added later)
+__pycache__/
+*.pyc
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/

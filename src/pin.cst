@@ -1,0 +1,58 @@
+// ==============================================================================
+// C4 Timer Prop - Physical Constraints File (.cst)
+// Target: Tang Primer 20K (GW2A-18C)
+// ==============================================================================
+
+// ------------------------------------------------------------------------------
+// SYSTEM CLOCK
+// ------------------------------------------------------------------------------
+// 27MHz Onboard Oscillator
+IO_LOC "sys_clk" H11;
+IO_PORT "sys_clk" IO_TYPE=LVCMOS33;
+
+// ------------------------------------------------------------------------------
+// TACTILE BUTTON INPUTS (Active-Low)
+// ------------------------------------------------------------------------------
+// btn_raw[0] : Global Reset (S0)
+// Note: T10 is a dual-purpose pin. Ensure "Use JTAG as regular IO" is enabled 
+// or map to a different dedicated IO if JTAG debugging is required.
+IO_LOC "btn_raw[0]" T10;
+IO_PORT "btn_raw[0]" IO_TYPE=LVCMOS33 PULL_MODE=UP; 
+
+// btn_raw[1] : Action / Arm Bomb (S1)
+IO_LOC "btn_raw[1]" T3;
+IO_PORT "btn_raw[1]" IO_TYPE=LVCMOS15 PULL_MODE=UP; 
+
+// btn_raw[2] : Defuse Hold (S2)
+IO_LOC "btn_raw[2]" T2;
+IO_PORT "btn_raw[2]" IO_TYPE=LVCMOS15 PULL_MODE=UP; 
+
+// btn_raw[3] : Keypad '0' (S3)
+IO_LOC "btn_raw[3]" D7;
+IO_PORT "btn_raw[3]" IO_TYPE=LVCMOS15 PULL_MODE=UP; 
+
+// btn_raw[4] : Keypad '1' (S4)
+IO_LOC "btn_raw[4]" C7;
+IO_PORT "btn_raw[4]" IO_TYPE=LVCMOS15 PULL_MODE=UP; 
+
+// ------------------------------------------------------------------------------
+// AUDIO OUTPUT
+// ------------------------------------------------------------------------------
+// Drives the I/O pin of the 3-pin passive buzzer module
+IO_LOC "buzzer" P9;
+IO_PORT "buzzer" IO_TYPE=LVCMOS33 DRIVE=8;
+
+// ------------------------------------------------------------------------------
+// SPI DISPLAY MULTIPLEXER (74HC595 Daisy Chain)
+// ------------------------------------------------------------------------------
+// spi_ser : Serial Data Input (DS - Pin 14 on IC2)
+IO_LOC "spi_ser" T6;
+IO_PORT "spi_ser" IO_TYPE=LVCMOS33 DRIVE=8;
+
+// spi_srclk : Shift Register Clock (SHCP - Pin 11 on IC1 & IC2)
+IO_LOC "spi_srclk" R8;
+IO_PORT "spi_srclk" IO_TYPE=LVCMOS33 DRIVE=8;
+
+// spi_rclk : Storage Register Latch (STCP - Pin 12 on IC1 & IC2)
+IO_LOC "spi_rclk" T8;
+IO_PORT "spi_rclk" IO_TYPE=LVCMOS33 DRIVE=8;
