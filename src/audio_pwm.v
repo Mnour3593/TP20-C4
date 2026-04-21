@@ -147,8 +147,7 @@ module audio_pwm #(
         if (reset)
             buzzer <= 1'b0;
         else
-            //buzzer <= carrier_wave & gate_clean;     ACTIVATE BUZZER
-            buzzer <= 1'b0;                         // MUTE SWITCH ENGAGED
+            buzzer <= carrier_wave & gate_clean;     ACTIVATE BUZZER
     end
 
 endmodule

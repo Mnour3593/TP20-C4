@@ -67,8 +67,7 @@ module spi_display_driver #(
 
         // 2. Resolve Text/Numbers based on Game State
         case (game_state)
-            3'd0: base_seg = 8'b1111_1111; // <--- FORCES ALL SEGMENTS AND DP ON
-            //3'd0: base_seg = 8'b0100_0000; // IDLE: Dashes
+            3'd0: base_seg = 8'b0100_0000; // IDLE: Dashes
             3'd1, 3'd2: // ARMED or DEFUSING: Numbers
                 case (active_digit)
                     2'd0: base_seg = get_num_pattern(digit3);
