@@ -1,0 +1,18 @@
+[*] GTKWave Analyzer v3.3.100 (w)
+[dumpfile] "tb_counter.vcd"
+[savefile] "tb_counter.gtkw"
+[timestart] 0
+[treeopen] tb_counter.
+@28
+tb_counter.clk
+tb_counter.tick
+tb_counter.load
+tb_counter.count_down
+@22
+tb_counter.digit3[3:0]
+tb_counter.digit2[3:0]
+tb_counter.digit1[3:0]
+tb_counter.digit0[3:0]
+@28
+tb_counter.at_zero
+tb_counter.at_maximum

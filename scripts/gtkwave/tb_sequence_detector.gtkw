@@ -1,0 +1,13 @@
+[*] GTKWave Analyzer v3.3.100 (w)
+[dumpfile] "tb_sequence_detector.vcd"
+[savefile] "tb_sequence_detector.gtkw"
+[timestart] 0
+[treeopen] tb_sequence_detector.
+@28
+tb_sequence_detector.clk
+tb_sequence_detector.reset
+tb_sequence_detector.bit_in
+tb_sequence_detector.bit_valid
+tb_sequence_detector.uut.current_state[1:0]
+tb_sequence_detector.uut.progress[2:0]
+tb_sequence_detector.sequence_matched
