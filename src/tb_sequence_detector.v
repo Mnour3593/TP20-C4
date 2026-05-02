@@ -58,7 +58,7 @@ module tb_sequence_detector;
     end
 
     initial begin
-        $dumpfile("dump.vcd");
+        $dumpfile("tb_sequence_detector.vcd");
         $dumpvars(0, tb_sequence_detector);
     end
 

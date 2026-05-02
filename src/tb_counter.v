@@ -19,7 +19,7 @@ module tb_counter;
         .at_zero(at_zero), .at_maximum(at_maximum)
     );
 initial begin
-$dumpfile("test.vcd"); 
+$dumpfile("tb_counter.vcd"); 
 $dumpvars(0, tb_counter);
 
     clk = 0;
