@@ -3,6 +3,13 @@
 // Target: Tang Primer 20K (GW2A-18C)
 // ==============================================================================
 
+// Board IO notes:
+// - Mixed IO standards: most display and interface pins use LVCMOS33, some
+//   button pins use LVCMOS15 to match the display/module levels.
+// - Check dual-purpose pin T10 (btn_raw[0]): this pin can be SSPI or regular IO.
+//   If repurposing, ensure "Use SSPI as regular IO" is enabled or remap to avoid
+//   SSPI conflicts.
+
 // ------------------------------------------------------------------------------
 // SYSTEM CLOCK
 // ------------------------------------------------------------------------------

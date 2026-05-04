@@ -11,6 +11,8 @@ module spi_display_driver #(
 );
 
     // 7-segment encoding: {DP, G, F, E, D, C, B, A}
+    // Active-high segments: bit=1 lights the segment. DP is bit 7.
+    // Example (active-high): 0 => 8'b0_0111111 (0x3F), 1 => 8'b0_0000110 (0x06)
     function [7:0] get_num_pattern;
         input [3:0] bcd;
         case (bcd)

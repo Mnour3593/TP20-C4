@@ -92,6 +92,7 @@ module c4_top (
     wire       defuse_count_up;
     wire       defuse_counter_reset;
     wire       main_at_zero;
+    wire       main_at_max;
     wire       defuse_at_max;
 
     game_fsm u_game_fsm (
@@ -128,7 +129,7 @@ module c4_top (
         .digit1     (main_digit1),
         .digit0     (main_digit0),
         .at_zero    (main_at_zero),
-        .at_maximum ()              
+        .at_maximum (main_at_max)              
     );
 
     wire defuse_reset_combined = sys_reset | defuse_counter_reset;
