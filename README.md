@@ -13,8 +13,11 @@ This project provides a hardware implementation of a C4 Timer on a Tang Primer 2
 - **Toolchain:** Gowin IDE
 - **Custom Shield:** The project requires building a custom circuit. The circuit interfaces a 4-Digit 7-Segment display via dual daisy-chained 74HC595 shift registers and includes a direct-drive passive audio buzzer. 
 
-![Wiring Diagram Placeholder](docs/wiring_diagram.png) 
-*(Note: Replace with actual path to wiring diagram once drawn)*
+![Block Diagram](docs/tp20-c4_diagram.png)
+*System block diagram: top-level modules and signal flows.*
+
+![Shield Schematics](docs/tp20-c4_shield_schematics.png)
+*Shield wiring: dual 74HC595 daisy-chain and FPGA PMOD mapping.*
 
 ## Repository Structure
 
@@ -74,4 +77,10 @@ Tests the Mealy FSM that detects the bit sequence **1-0-1-1**:
 - **Async Reset**: Verifies reset clears all outputs mid-sequence
 
 **Signals displayed**: `clk`, `reset`, `bit_in`, `bit_valid`, `current_state` (binary), `sequence_matched`
+
+## Submission notes
+
+- Recommended to exclude generated artifacts before submitting: `impl/gwsynthesis/*` (reports, HTML), `impl/pnr/*` (bin, reports), and simulation outputs in `src/` (`tb_*.vcd`, `tb_*.vvp`).
+- `pin.cst` documents IO standards and notes the dual-purpose pin T10 (btn_raw[0]) — ensure the board JTAG setting is correct if reassigning.
+- `c4_top.v` exposes a debug signal `main_at_max` from the main `universal_counter` — useful to drive a status LED or display indicator for demonstration. It is intentionally left unconnected by default.
 
