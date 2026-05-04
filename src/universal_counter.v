@@ -32,18 +32,18 @@ module universal_counter #(
     
     // 2. stop signals (at_zero ve at_maximum)
     
-    // at_zero: 
+    // triggers when the timer reaches absolute zero
     assign at_zero = (digit3 == 0) && (digit2 == 0) && (digit1 == 0) && (digit0 == 0);
     
-    // at_maximum: 
+    //  convert bcd sec to binary to check upper limit
     wire [6:0] current_seconds = (digit3 * 10) + digit2;
     assign at_maximum = (current_seconds == MAX_UP_SECONDS) && (digit1 == 0) && (digit0 == 0);
 
-    // 3. wire betwween seconds and cents 
+    // 3. wire between seconds and cents 
     // for down counting, cent must 00 to decrease 1 seconds
     wire cents_at_zero = (digit1 == 0 && digit0 == 0); 
     
-    // for up counting, cent must 99 to inccrease 1 seconds
+    // for up counting, cent must 99 to increase 1 seconds
     wire cents_at_max  = (digit1 == 9 && digit0 == 9); 
 
 
